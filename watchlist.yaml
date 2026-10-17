@@ -1,0 +1,455 @@
+# Deal Radar — watchlist
+#
+# Single source of truth for what is watched. Seeded into the `vendor` and
+# `source` tables by `pnpm seed` (collector/seed.ts). Upserts by vendor slug and
+# by (vendor, url), so editing this file and re-running seed is safe.
+#
+# tier 1 = polled every `cadence_minutes` (default 15)
+# tier 2 = polled every 6 hours
+#
+# NOTE ON VENDOR-PAGE SOURCES
+# Vendor deal/pricing URLs marked `note: unverified` have not been checked
+# against the live site. The /sources page in the dashboard is the verification
+# mechanism: anything returning non-200 or extracting nothing shows as
+# degraded/failing there. Fix the URL, or set `enabled: false` to silence it.
+#
+# NOTE ON TERMS OF SERVICE
+# Some vendors forbid automated collection. Those vendors are listed with no
+# sources at all — they are watched via community feeds instead. Do not add a
+# source for a vendor you have not cleared.
+
+vendors:
+  # ---------------------------------------------------------------- llm
+  - slug: openai
+    name: OpenAI
+    category: llm
+    tier: 1
+    website: https://openai.com
+    sources:
+      - url: https://openai.com/api/pricing/
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: anthropic
+    name: Anthropic
+    category: llm
+    tier: 1
+    website: https://anthropic.com
+    sources:
+      - url: https://www.anthropic.com/pricing
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: google-gemini
+    name: Google Gemini
+    category: llm
+    tier: 1
+    website: https://gemini.google.com
+    sources:
+      - url: https://ai.google.dev/pricing
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: perplexity
+    name: Perplexity
+    category: llm
+    tier: 1
+    website: https://perplexity.ai
+    sources:
+      - url: https://www.perplexity.ai/pro
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: xai
+    name: xAI
+    category: llm
+    tier: 2
+    website: https://x.ai
+
+  - slug: mistral
+    name: Mistral
+    category: llm
+    tier: 2
+    website: https://mistral.ai
+
+  - slug: deepseek
+    name: DeepSeek
+    category: llm
+    tier: 1
+    website: https://deepseek.com
+    sources:
+      - url: https://api-docs.deepseek.com/quick_start/pricing
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: openrouter
+    name: OpenRouter
+    category: llm
+    tier: 1
+    website: https://openrouter.ai
+    sources:
+      - url: https://openrouter.ai/models
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  # -------------------------------------------------------------- media
+  - slug: higgsfield
+    name: Higgsfield
+    category: media
+    tier: 1
+    website: https://higgsfield.ai
+    sources:
+      - url: https://higgsfield.ai/pricing
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: runway
+    name: Runway
+    category: media
+    tier: 1
+    website: https://runwayml.com
+    sources:
+      - url: https://runwayml.com/pricing
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: kling
+    name: Kling
+    category: media
+    tier: 1
+    website: https://klingai.com
+    sources:
+      - url: https://app.klingai.com/global/membership/membership-plan
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: luma
+    name: Luma
+    category: media
+    tier: 2
+    website: https://lumalabs.ai
+
+  - slug: midjourney
+    name: Midjourney
+    category: media
+    tier: 2
+    website: https://midjourney.com
+
+  - slug: elevenlabs
+    name: ElevenLabs
+    category: media
+    tier: 1
+    website: https://elevenlabs.io
+    sources:
+      - url: https://elevenlabs.io/pricing
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: heygen
+    name: HeyGen
+    category: media
+    tier: 2
+    website: https://heygen.com
+
+  - slug: descript
+    name: Descript
+    category: media
+    tier: 2
+    website: https://descript.com
+
+  # ----------------------------------------------------------- devtools
+  - slug: cursor
+    name: Cursor
+    category: devtools
+    tier: 1
+    website: https://cursor.com
+    sources:
+      - url: https://cursor.com/pricing
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: github-copilot
+    name: GitHub Copilot
+    category: devtools
+    tier: 1
+    website: https://github.com/features/copilot
+    sources:
+      - url: https://github.com/features/copilot/plans
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: windsurf
+    name: Windsurf
+    category: devtools
+    tier: 1
+    website: https://windsurf.com
+    sources:
+      - url: https://windsurf.com/pricing
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: replit
+    name: Replit
+    category: devtools
+    tier: 2
+    website: https://replit.com
+
+  - slug: v0
+    name: v0
+    category: devtools
+    tier: 2
+    website: https://v0.dev
+
+  # ------------------------------------------------------------ hosting
+  - slug: hetzner
+    name: Hetzner
+    category: hosting
+    tier: 1
+    website: https://hetzner.com
+    sources:
+      - url: https://www.hetzner.com/cloud/
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: racknerd
+    name: RackNerd
+    category: hosting
+    tier: 1
+    website: https://racknerd.com
+    sources:
+      - url: https://my.racknerd.com/index.php?rp=/store/special-promos
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: hosthatch
+    name: HostHatch
+    category: hosting
+    tier: 1
+    website: https://hosthatch.com
+    sources:
+      - url: https://hosthatch.com/storage-vps
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: netcup
+    name: Netcup
+    category: hosting
+    tier: 1
+    website: https://netcup.com
+    sources:
+      - url: https://www.netcup.com/en/server/vps
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: digitalocean
+    name: DigitalOcean
+    category: hosting
+    tier: 1
+    website: https://digitalocean.com
+    sources:
+      - url: https://www.digitalocean.com/pricing
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: vultr
+    name: Vultr
+    category: hosting
+    tier: 2
+    website: https://vultr.com
+
+  - slug: namecheap
+    name: Namecheap
+    category: hosting
+    tier: 1
+    website: https://namecheap.com
+    sources:
+      - url: https://www.namecheap.com/domains/
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: porkbun
+    name: Porkbun
+    category: hosting
+    tier: 1
+    website: https://porkbun.com
+    sources:
+      - url: https://porkbun.com/products/domains
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  # ---------------------------------------------------------------- ops
+  - slug: notion
+    name: Notion
+    category: ops
+    tier: 1
+    website: https://notion.so
+    sources:
+      - url: https://www.notion.com/pricing
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: linear
+    name: Linear
+    category: ops
+    tier: 1
+    website: https://linear.app
+    sources:
+      - url: https://linear.app/pricing
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: figma
+    name: Figma
+    category: ops
+    tier: 1
+    website: https://figma.com
+    sources:
+      - url: https://www.figma.com/pricing/
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: canva
+    name: Canva
+    category: ops
+    tier: 2
+    website: https://canva.com
+
+  - slug: zapier
+    name: Zapier
+    category: ops
+    tier: 2
+    website: https://zapier.com
+
+  - slug: make
+    name: Make
+    category: ops
+    tier: 2
+    website: https://make.com
+
+  - slug: n8n
+    name: n8n
+    category: ops
+    tier: 1
+    website: https://n8n.io
+    sources:
+      - url: https://n8n.io/pricing/
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: airtable
+    name: Airtable
+    category: ops
+    tier: 2
+    website: https://airtable.com
+
+  # ------------------------------------------------------------ storage
+  - slug: backblaze
+    name: Backblaze
+    category: storage
+    tier: 1
+    website: https://backblaze.com
+    sources:
+      - url: https://www.backblaze.com/cloud-storage/pricing
+        kind: page
+        adapter: llm_page
+        note: unverified
+
+  - slug: pcloud
+    name: pCloud
+    category: storage
+    tier: 2
+    website: https://pcloud.com
+
+  - slug: envato-elements
+    name: Envato Elements
+    category: storage
+    tier: 2
+    website: https://elements.envato.com
+
+  # ---------------------------------------------------- community feeds
+  # Aggregate sources. Community feeds catch deals that no single vendor page
+  # will advertise, and they are the discovery layer for vendors we cannot poll
+  # directly. These are the highest-value sources in the whole watchlist.
+  - slug: hacker-news
+    name: Hacker News
+    category: hosting
+    tier: 1
+    service_line: discovery
+    sources:
+      - url: https://hn.algolia.com/api/v1/search_by_date?query=black%20friday&tags=story&hitsPerPage=50
+        kind: api
+        adapter: hackernews
+        cadence_minutes: 30
+      - url: https://hn.algolia.com/api/v1/search_by_date?query=deal&tags=story&hitsPerPage=50
+        kind: api
+        adapter: hackernews
+        cadence_minutes: 60
+
+  - slug: reddit-selfhosted
+    name: r/selfhosted
+    category: hosting
+    tier: 1
+    service_line: discovery
+    sources:
+      - url: https://www.reddit.com/r/selfhosted/search.json?q=black+friday&sort=new&restrict_sr=1&limit=50
+        kind: api
+        adapter: reddit
+        cadence_minutes: 30
+
+  - slug: reddit-localllama
+    name: r/LocalLLaMA
+    category: llm
+    tier: 1
+    service_line: discovery
+    sources:
+      - url: https://www.reddit.com/r/LocalLLaMA/search.json?q=black+friday&sort=new&restrict_sr=1&limit=50
+        kind: api
+        adapter: reddit
+        cadence_minutes: 30
+
+  - slug: reddit-webdev
+    name: r/webdev
+    category: devtools
+    tier: 2
+    service_line: discovery
+    sources:
+      - url: https://www.reddit.com/r/webdev/search.json?q=black+friday&sort=new&restrict_sr=1&limit=50
+        kind: api
+        adapter: reddit
+        cadence_minutes: 60
+
+  - slug: lowendtalk
+    name: LowEndTalk
+    category: hosting
+    tier: 1
+    service_line: discovery
+    sources:
+      - url: https://lowendtalk.com/categories/deals/feed.rss
+        kind: rss
+        adapter: rss
+        cadence_minutes: 30
+        note: unverified
