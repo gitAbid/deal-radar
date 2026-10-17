@@ -12,25 +12,26 @@
 
 PeraByte AI buys a meaningful amount of software to run its service lines: LLM subscriptions and API credits, AI video/image/voice tools, AI coding tools, hosting and infrastructure, agency operations SaaS, and storage/assets.
 
-Every November these vendors run steep, short-lived discounts. The failure mode is not "we found no deals" — it is **missing a deal that was live for two days**, or **buying a deal we cannot actually pay for from Bangladesh**.
+Every November these vendors run steep, short-lived discounts. The failure mode is not "we found no deals" — it is **missing a deal that was live for two days**.
 
-PayPal does not operate in Bangladesh. Many locally issued cards ship with international transactions disabled. Several vendors silently reject Bangladeshi billing addresses or IPs. A generic deal list has no idea about any of this.
+A second, known constraint applies: paying from Bangladesh is awkward. PayPal does not operate in the country, many locally issued cards ship with international transactions disabled, and some vendors reject Bangladeshi billing addresses or IPs. **v1 does not attempt to model this** — it is handled by checking a vendor by hand when a deal is worth acting on. See §13.
 
 ## 2. Goal
 
-A system that automatically watches a defined set of vendors across six categories, detects new deals, scores them against what PeraByte actually intends to buy, confirms whether each deal is payable from Bangladesh and by what route, and surfaces the result in a web dashboard with Telegram push for matched deals.
+A system that automatically watches a defined set of vendors across six categories, detects new deals, scores them against what PeraByte actually intends to buy, and surfaces the result in a web dashboard with Telegram push for matched deals.
 
-**Success in one sentence:** during November, no relevant deal is missed, and every deal shown can actually be paid for.
+**Success in one sentence:** during November, no relevant deal is missed, and nothing in the dashboard is stale or silently broken.
 
 ## 3. Non-goals (v1)
 
 - **No auto-purchase.** The system never buys anything. Not now, not later.
+- **No payability database.** Vendors' Bangladesh payment status is checked manually when a deal matters. No `bd_status`, no badge, no scoring term — see §13.
 - **No user accounts or multi-tenancy.** Single operator. The dashboard is protected by Vercel deployment protection.
 - **No price-history charts.** Only current and previous price.
 - **No regional-pricing engine.** Explicitly deferred.
 - **No email channel.** Telegram only.
 - **No VPS dependency.** Everything runs on free managed tiers. The collector is written as a portable script over Postgres so it *can* move to the PeraByte Coolify VPS later without a rewrite — but v1 does not require it.
-- **No scraping of vendors whose terms forbid it.** Those are marked `restricted` and excluded from collection.
+- **No scraping of vendors whose terms forbid it.** Such vendors are left out of the watchlist, or included with `enabled: false` and a note recording why.
 
 ## 4. Architecture
 
@@ -75,8 +76,8 @@ deal-radar/
   db/
     schema.sql
     migrations/
-  watchlist.yaml         # vendors, sources, payability profiles, tiers
-  web/                   # Next.js App Router, read-only
+  watchlist.yaml         # vendors, sources, tiers
+  web/                   # Next.js App Router, read-mostly
     app/
       page.tsx           # deals table
       review/page.tsx    # needs-review queue
@@ -102,7 +103,7 @@ Each is a deep module: small interface, substantial internals, independently tes
 | `extract` | `extract(text, vendor) → {deals, confidence}` | LLM call with strict JSON schema, schema validation, one repair retry |
 | `normalise` | `normalise(raw) → Deal` | Currency, ISO dates, discount % computation, fingerprint generation |
 | `dedupe` | `classify(deal) → NEW \| UPDATED \| DUPLICATE` | Fingerprint match, then fuzzy title+price match within vendor |
-| `score` | `score(deal, targets, profile) → {score, breakdown}` | Pure function. No I/O |
+| `score` | `score(deal, targets) → {score, breakdown}` | Pure function. No I/O |
 | `store` | narrow repository methods | All SQL. Swap to another Postgres by reimplementing this one module |
 | `alert` | `notify(deal) → AlertResult` | Telegram send, per-deal dedupe, rate limiting |
 | `heartbeat` | `ping() → void` | Dead-man's switch ping on successful run |
@@ -112,9 +113,7 @@ Each is a deep module: small interface, substantial internals, independently tes
 
 **`vendor`** — `id`, `slug` (unique), `name`, `category` (enum: `llm`, `media`, `devtools`, `hosting`, `ops`, `storage`), `tier` (1|2), `website`, `service_line` (which PeraByte service this supports, nullable)
 
-**`payability_profile`** — `vendor_id` (PK/FK), `bd_status` (enum: `works`, `virtual_card`, `vpn_required`, `restricted`, `unknown`), `payment_route` (text), `accepts_bd_cards` (bool), `billing_country_checked` (bool), `notes`, `last_verified` (date)
-
-**`source`** — `id`, `vendor_id`, `url`, `kind` (enum: `rss`, `api`, `page`), `adapter` (enum: `rss`, `hackernews`, `reddit`, `llm_page`), `cadence_minutes`, `enabled`, `last_checked_at`, `last_changed_at`, `content_hash`, `consecutive_failures`, `health` (enum: `ok`, `degraded`, `failing`, `disabled`)
+**`source`** — `id`, `vendor_id`, `url`, `kind` (enum: `rss`, `api`, `page`), `adapter` (enum: `rss`, `hackernews`, `reddit`, `llm_page`), `cadence_minutes`, `enabled`, `note`, `last_checked_at`, `last_changed_at`, `content_hash`, `consecutive_failures`, `health` (enum: `ok`, `degraded`, `failing`, `disabled`)
 
 **`deal`** — `id`, `vendor_id`, `source_id`, `title`, `summary`, `price_now` (numeric), `price_was` (numeric, nullable), `currency`, `discount_pct` (numeric, nullable), `promo_code`, `starts_at`, `ends_at`, `url`, `eligibility_note`, `confidence` (numeric 0–1), `status` (enum: `published`, `needs_review`, `rejected`, `expired`), `score` (numeric), `score_breakdown` (jsonb), `fingerprint` (unique), `first_seen_at`, `last_seen_at`
 
@@ -142,7 +141,7 @@ runOnce():
             store(status='needs_review'); continue
         if dedupe.classify(d) == DUPLICATE / UPDATED:
             store(upsert); continue
-        d.score, d.breakdown = score(d, targets, profile)
+        d.score, d.breakdown = score(d, targets)
         store(d, status='published')
         if matchesTarget(d) and d.score >= ALERT_THRESHOLD:
             alert.notify(d)
@@ -159,7 +158,7 @@ Per-source isolation is absolute: one failing vendor never aborts a run or affec
 
 ## 9. Score calculation
 
-`score = 3·relevance + 2·log10(savings_usd + 1) + 1.5·(discount_pct/10) + 2·urgency + 1·payability`
+`score = 3·relevance + 2·log10(savings_usd + 1) + 1.5·(discount_pct/10) + 2·urgency`
 
 | Component | Definition |
 |---|---|
@@ -167,9 +166,8 @@ Per-source isolation is absolute: one failing vendor never aborts a run or affec
 | `savings_usd` | `price_was − price_now`, converted to USD. Unknown `price_was` → 0 |
 | `discount_pct` | As advertised, or computed. Unknown → 0 |
 | `urgency` | 2 if `ends_at` within 72 h; 1 if within 7 days; 0 otherwise |
-| `payability` | `works` = 1, `virtual_card` = 0.5, `vpn_required` = 0.25, `restricted` = 0 |
 
-Weights live in config so they can be tuned without code changes. `ALERT_THRESHOLD` defaults to 8.
+Weights live in config so they can be tuned without code changes. `ALERT_THRESHOLD` defaults to 8 and should be re-tuned against real data in the first week — it is a guess, not a measurement.
 
 ## 10. Failure handling
 
@@ -217,22 +215,28 @@ Going public removes the Actions minute constraint entirely and doubles as a por
 | `ops` | Notion, Linear, Figma, Canva, Zapier, Make, n8n, Airtable |
 | `storage` | Backblaze, pCloud, Envato Elements |
 
-Each vendor entry carries its `payability_profile` inline. Unverified vendors default to `bd_status: unknown`, which is surfaced honestly rather than assumed payable.
+The seed is a starting point, not a commitment — the file is meant to be edited freely as the season develops.
 
-## 13. Payability model
+## 13. Payability (deferred to v2)
 
-Payability is curated data, not inferred. Automatic detection is unreliable and would produce confident wrong answers.
+Deliberately **out of v1**. Vendor payment status for Bangladesh is checked by hand when a deal is worth acting on; it is not modelled, scored, filtered on, or alerted on.
 
-- One `payability_profile` row per vendor, reviewed by hand before Black Friday.
-- `bd_status` drives both the dashboard badge and a scoring penalty.
-- `payment_route` is free text describing the realistic path, e.g. *"Accepts dual-currency BD Visa; enable international transactions first"* or *"Requires Payoneer virtual card; BD billing address rejected in checkout"*.
-- `last_verified` is displayed so staleness is visible. A profile older than 90 days is flagged in the UI.
+Why it is deferred rather than built:
+
+- The real answer is only discoverable at checkout. A curated table would be confidently wrong as often as it was right without continuous manual re-verification, which is ongoing work with no proof of payoff yet.
+- Maintaining ~30 vendor profiles costs real time that is better spent making sure deals are actually *found* before making sure they are annotated.
+
+What this means concretely:
+
+- No `bd_status`, no vendor badge, no payability term in the score, no BD filter in the dashboard.
+- `deal.eligibility_note` **stays** — it records conditions the vendor itself states ("new customers only", "region-locked", "annual plans only"). That falls out of extraction for free, so there is no reason to drop it.
+- If the tracker earns its keep, a vendor-level payability profile is a clean v2 addition: one new table, no changes to existing rows.
 
 ## 14. Dashboard (Next.js App Router, read-mostly)
 
 | Page | Contents |
 |---|---|
-| `/` Deals | Table: vendor, category, title, price now/was, discount %, code, ends, BD badge, score. Filters: category, tier, BD status, minimum discount, ending within N days, text search. Sort by score, discount, or expiry. |
+| `/` Deals | Table: vendor, category, title, price now/was, discount %, code, ends, score. Filters: category, tier, minimum discount, ending within N days, text search. Sort by score, discount, or expiry. |
 | `/review` | Deals with `status='needs_review'`. Approve → `published`, Reject → `rejected`. |
 | `/sources` | Per source: vendor, kind, last checked, last changed, consecutive failures, health. Makes silent breakage visible. |
 | `/targets` | CRUD over `targets`. Drives alerting. |
@@ -270,19 +274,18 @@ The extractor targets any **OpenAI-compatible chat-completions endpoint**, so th
 5. `score` + `targets` + `alert` (Telegram) + `heartbeat`
 6. `/sources` health page + `/runs`
 7. `collect.yml` hardening (retries, `workflow_dispatch`), `keepalive.yml`
-8. Populate Tier 1 payability profiles by hand
-9. Add Tier 2 vendors progressively
+8. Add Tier 2 vendors progressively
 
 ## 18. Risks
 
 | Risk | Mitigation |
 |---|---|
-| Vendor blocks automated collection | Feed/API first; `restricted` vendors excluded by policy; health page makes blocks visible |
+| Vendor blocks automated collection | Feed/API first; vendors whose terms forbid collection are excluded by policy; health page makes blocks visible |
 | LLM extraction cost spikes | Change detection gates every model call; Tier 2 polled every 6 hours |
 | Watchlist breadth (100+ vendors) overwhelms Tier 1 quality | Strict tiering; Tier 1 hand-curated first, Tier 2 added progressively |
 | GitHub Actions silently stops | Heartbeat + Telegram, keepalive commit, `workflow_dispatch` |
 | Watchlist decays after November | Deliberate — the system is designed to be switched off and re-enabled next November with no rot, since sources are declarative |
-| Payability data goes stale | `last_verified` surfaced in UI; profiles older than 90 days flagged |
+| `ALERT_THRESHOLD` is a guess | Re-tune against real data in the first week of collection; alert fatigue is the failure mode to watch for |
 
 ## 19. Resolved decisions
 
@@ -292,4 +295,4 @@ The extractor targets any **OpenAI-compatible chat-completions endpoint**, so th
 - Collector host: **GitHub Actions**, 15-minute Tier 1 cadence
 - Output: **web dashboard + Telegram alerts**
 - Coverage: **all six categories**, tiered
-- Payability: **curated vendor profile + per-deal route**
+- Payability: **deferred to v2** — checked manually in the meantime
