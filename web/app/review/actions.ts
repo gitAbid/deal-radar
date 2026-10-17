@@ -4,7 +4,8 @@ import { refresh, revalidatePath } from 'next/cache';
 import { query } from '@/lib/db';
 
 /**
- * The only writes in the dashboard: a human decision on a needs_review deal.
+ * A human decision on a needs_review deal — one of the dashboard's two write paths
+ * (the other is app/targets/actions.ts).
  * Guarded on the current status so a double-submit (or a stale page) cannot
  * re-decide a deal that has already been reviewed.
  */

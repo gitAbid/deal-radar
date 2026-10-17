@@ -14,7 +14,8 @@ export default function ReviewPage() {
       <h1 className="text-base font-semibold tracking-tight">Review queue</h1>
       <p className="text-xs text-neutral-500">
         Extractions that fell below the confidence floor, waiting on a human. Approving publishes
-        the deal; rejecting keeps it out. These two decisions are the only writes in the dashboard.
+        the deal; rejecting keeps it out. Review decisions and target edits on /targets are the
+        dashboard's writes.
       </p>
       <Suspense fallback={<Loading label="Loading review queue" />}>
         <ReviewView />

@@ -11,7 +11,7 @@ Deployment Protection.
 | `/` | Published deals. Filters (category, tier, minimum discount, ending within N days, text search) live in `searchParams`, so every view is a linkable URL. Default sort `score DESC`, ending-soon rows highlighted. |
 | `/review` | Deals with `status = 'needs_review'`. Approve → `published`, Reject → `rejected`. These Server Actions are the only writes in the app. |
 | `/sources` | Per-source collection health. Degraded and failing sources sort to the top; that is how silent breakage is noticed. |
-| `/targets` | Targets that drive scoring relevance and alerts (read-only in this build). |
+| `/targets` | Targets that drive scoring relevance and alerts. Create/edit/pause/delete via Server Actions — an active target matching on vendor or keyword is the only way a Telegram alert can fire. |
 | `/runs` | Recent `run_log` rows with the `errors` JSONB expanded into readable lines. |
 | `/api/deals` | The deals list as JSON. Accepts the same query params as `/`: `category`, `tier`, `min_discount`, `ending_days`, `q`, `sort=score\|discount\|ending`. |
 
@@ -66,4 +66,4 @@ records untouched — only the `deals` subdomain points at Vercel.
   parsed to JS numbers once, globally, in the same file.
 - Pages are rendered per request (Next.js Cache Components: async data lives behind `<Suspense>`
   with `connection()`), so the dashboard is never a build-time snapshot of the database.
-- The web tier never writes to `deal` or `source` except the review queue; `target` is read-only.
+- The web tier never writes to `deal` or `source` except the review queue; `target` is managed from `/targets` (the dashboard's other write path).
