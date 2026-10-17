@@ -1,0 +1,52 @@
+name: collect
+
+# Spec §11: scheduling lives entirely in GitHub Actions. Vercel Hobby cron is
+# limited to daily schedules, which is far too slow for a Black Friday window.
+#
+# Spec §10: scheduled runs are best-effort. They can be delayed 6-51 minutes,
+# dropped with no failed-run record, and silently disabled after 60 days of repo
+# inactivity. Three defences: the concurrency guard below, keepalive.yml, and
+# the heartbeat ping the collector sends at the end of every successful run
+# (an external monitor alerts on Telegram when those pings stop).
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+# Never allow two runs to overlap. A delayed run and a scheduled run fetching the
+# same sources at once would double-count and waste LLM calls.
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm collect
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          HEARTBEAT_URL: ${{ secrets.HEARTBEAT_URL }}
+          # Not secret; changeable without touching the workflow.
+          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}

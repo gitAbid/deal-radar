@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/*
+ * Deal Radar dashboard — internal operator tool.
+ * One light theme, system font stack, dense tables. Tailwind v4 is wired in
+ * through @tailwindcss/turbopack in next.config.ts; no custom CSS needed.
+ */
