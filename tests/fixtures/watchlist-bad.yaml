@@ -1,0 +1,7 @@
+# Fixture for tests/watchlist.test.ts — the category on line 6 is invalid.
+vendors:
+  - slug: broken-vendor
+    name: Broken Vendor
+    category: nonsense
+    tier: 1
+    website: https://example.com

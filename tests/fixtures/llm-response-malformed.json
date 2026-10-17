@@ -1,0 +1,21 @@
+{
+  "id": "chatcmpl-fixture-malformed",
+  "object": "chat.completion",
+  "created": 1760700000,
+  "model": "gpt-4o-mini",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"deals\": [{\"title\": \"Cursor Pro — 50% off annual\", \"price_now\": 96"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4123,
+    "completion_tokens": 210,
+    "total_tokens": 4333
+  }
+}

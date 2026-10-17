@@ -1,0 +1,5 @@
+# pnpm 12 reads build-script approvals from here; the package.json "pnpm" field
+# is ignored since pnpm 12. esbuild ships a postinstall that links its platform
+# binary; without this, `pnpm install` exits 1 with ERR_PNPM_IGNORED_BUILDS.
+allowBuilds:
+  esbuild: true

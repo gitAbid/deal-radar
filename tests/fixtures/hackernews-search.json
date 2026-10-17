@@ -1,0 +1,489 @@
+{
+  "exhaustive": {
+    "nbHits": false,
+    "typo": false
+  },
+  "exhaustiveNbHits": false,
+  "exhaustiveTypo": false,
+  "hits": [
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "mooreds"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "Can Your Identity Platform Pass the <em>Black</em> <em>Friday</em> Test?"
+        },
+        "url": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "https://fusionauth.io/blog/<em>black</em>-<em>friday</em>-identity-test"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_mooreds",
+        "story_49917228"
+      ],
+      "author": "mooreds",
+      "created_at": "2026-10-01T03:03:06Z",
+      "created_at_i": 1790823786,
+      "num_comments": 0,
+      "objectID": "49917228",
+      "points": 3,
+      "story_id": 49917228,
+      "title": "Can Your Identity Platform Pass the Black Friday Test?",
+      "updated_at": "2026-10-01T03:41:59Z",
+      "url": "https://fusionauth.io/blog/black-friday-identity-test"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "comtom"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "Preparing your website or app for <em>Black</em> <em>Friday</em>"
+        },
+        "url": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "https://medium.com/@therealcomtom/preparing-your-website-or-app-for-<em>black</em>-<em>friday</em>-ee0b798d7bfc"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_comtom",
+        "story_49905897"
+      ],
+      "author": "comtom",
+      "created_at": "2026-09-30T08:08:49Z",
+      "created_at_i": 1790755729,
+      "num_comments": 0,
+      "objectID": "49905897",
+      "points": 1,
+      "story_id": 49905897,
+      "title": "Preparing your website or app for Black Friday",
+      "updated_at": "2026-09-30T08:12:25Z",
+      "url": "https://medium.com/@therealcomtom/preparing-your-website-or-app-for-black-friday-ee0b798d7bfc"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "buildItN0w_"
+        },
+        "story_text": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "<em>Black Friday</em> is &quot;around the corner&quot; (lol) and I want to capture the best deals!"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "Show HN: <em>Black Friday</em> is in 91 days"
+        },
+        "url": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "https://<em>blackfriday</em>.tools"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_buildItN0w_",
+        "story_49470637",
+        "show_hn"
+      ],
+      "author": "buildItN0w_",
+      "created_at": "2026-08-27T20:19:29Z",
+      "created_at_i": 1787861969,
+      "num_comments": 0,
+      "objectID": "49470637",
+      "points": 1,
+      "story_id": 49470637,
+      "story_text": "Black Friday is &quot;around the corner&quot; (lol) and I want to capture the best deals!",
+      "title": "Show HN: Black Friday is in 91 days",
+      "updated_at": "2026-08-27T20:21:58Z",
+      "url": "https://blackfriday.tools"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "vivekk7190"
+        },
+        "story_text": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "Let me start this with something we already know, AI is here, it may be controversial how it will operate open or closed but its not going anywhere.<p>If you look at the current tech space, AI integrations and use and some very useful but some unnecessary AI implementations, you will realise that there are either many gaps in current understanding.<p>Lets start on what i wanted to talk, first lets talk about AI, what is AI, not the defination, but actually is AI, it may not be the ultimate intelligence but have some intelligence or atleast we can say, it know certain well known patterns, its ability comes in various sizes, but essentially now we a <em>black</em> box with some knobs, which be a better solution than hard coded flows, logics and if its imagined well, it can be really really useful but there is a flaw.<p>We being extremists, we either think of its going to taking all the jobs or its just useless, there is another way to approach it.<p>Think of it as intelligence layer available to you, but current tech stack (whole approach) is limiting its capabilities, why i think so?<p>Our tech space was never designed with this capability in mind that if its possible, the OS, markets, interactions, ui/ux all of its have a different architecture and now with immediate push for AI, we are trying to plug-in AI at various levels. In my opinion the architecture could be different, way diffetrent, better, secure, enabbling too many things, moving from 0 --&gt; 1 level of civilizational impact type.<p>Well, in my mind the idea is not well formed, but its something like this.<p>Imagine, a layer on intelligence present around you in all of your devices, may be on device, and this intelligence layer, can function at the core of tech, like imagine a device your phone, with this intelligence layer, what you are using, how you are using, context of the screen, surrounding, all the sensors to locate in space, audio, camera, all of these available to this inteligence layer, not to exploit but to make decisions, it can know that you are about to drive, it can warm up device in drive mode, audio that you like to play, warm up apps that you use, can talk back better, in sync with car play, interactions, analysing your mood, suggestions, not google suggestions, generic, but very personalised, like you generally go to pub on <em>friday</em>, you take a different route, put phone apps which are more needed and other things optimised, well organised phone, if someone try to trick you into OTP, can analyse, detect spams, frausters, helpful for old people to prevent getting scammed, you can continue tasks across devices, access stuff across devices, even your laptop is closed, at home it can do that, a deeply integrated OS, across devices, native intelligence built in, spawning ui to ease things, speed up, new ways of input, accessing, auto fill forms, stuff, device handshakes to perform tasks on your behalf in an app in background, like can you do a whatsapp video call to mom, even if that shortcut is not exposed, it can take actions on your behalf, on device, fully native, build stuff for you, you frequenly need calculator to convert inches to mm or temparatures or weight or something like that, build as per needs, a fully intelligent working system, not at app level, not even device level, across devices, better integrations and huge impact, accessible to all kind of people and amazing.<p>This is not a fully formed idea, not sure how much capable it can be, but its better connected world, secure, safe, and intelligent."
+        },
+        "title": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "We need to rethink tech stack"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_vivekk7190",
+        "story_49061251",
+        "ask_hn"
+      ],
+      "author": "vivekk7190",
+      "children": [
+        49062053,
+        49061264
+      ],
+      "created_at": "2026-07-26T19:01:47Z",
+      "created_at_i": 1785092507,
+      "num_comments": 2,
+      "objectID": "49061251",
+      "points": 2,
+      "story_id": 49061251,
+      "story_text": "Let me start this with something we already know, AI is here, it may be controversial how it will operate open or closed but its not going anywhere.<p>If you look at the current tech space, AI integrations and use and some very useful but some unnecessary AI implementations, you will realise that there are either many gaps in current understanding.<p>Lets start on what i wanted to talk, first lets talk about AI, what is AI, not the defination, but actually is AI, it may not be the ultimate intelligence but have some intelligence or atleast we can say, it know certain well known patterns, its ability comes in various sizes, but essentially now we a black box with some knobs, which be a better solution than hard coded flows, logics and if its imagined well, it can be really really useful but there is a flaw.<p>We being extremists, we either think of its going to taking all the jobs or its just useless, there is another way to approach it.<p>Think of it as intelligence layer available to you, but current tech stack (whole approach) is limiting its capabilities, why i think so?<p>Our tech space was never designed with this capability in mind that if its possible, the OS, markets, interactions, ui&#x2F;ux all of its have a different architecture and now with immediate push for AI, we are trying to plug-in AI at various levels. In my opinion the architecture could be different, way diffetrent, better, secure, enabbling too many things, moving from 0 --&gt; 1 level of civilizational impact type.<p>Well, in my mind the idea is not well formed, but its something like this.<p>Imagine, a layer on intelligence present around you in all of your devices, may be on device, and this intelligence layer, can function at the core of tech, like imagine a device your phone, with this intelligence layer, what you are using, how you are using, context of the screen, surrounding, all the sensors to locate in space, audio, camera, all of these available to this inteligence layer, not to exploit but to make decisions, it can know that you are about to drive, it can warm up device in drive mode, audio that you like to play, warm up apps that you use, can talk back better, in sync with car play, interactions, analysing your mood, suggestions, not google suggestions, generic, but very personalised, like you generally go to pub on friday, you take a different route, put phone apps which are more needed and other things optimised, well organised phone, if someone try to trick you into OTP, can analyse, detect spams, frausters, helpful for old people to prevent getting scammed, you can continue tasks across devices, access stuff across devices, even your laptop is closed, at home it can do that, a deeply integrated OS, across devices, native intelligence built in, spawning ui to ease things, speed up, new ways of input, accessing, auto fill forms, stuff, device handshakes to perform tasks on your behalf in an app in background, like can you do a whatsapp video call to mom, even if that shortcut is not exposed, it can take actions on your behalf, on device, fully native, build stuff for you, you frequenly need calculator to convert inches to mm or temparatures or weight or something like that, build as per needs, a fully intelligent working system, not at app level, not even device level, across devices, better integrations and huge impact, accessible to all kind of people and amazing.<p>This is not a fully formed idea, not sure how much capable it can be, but its better connected world, secure, safe, and intelligent.",
+      "title": "We need to rethink tech stack",
+      "updated_at": "2026-07-29T05:54:07Z"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "ksec"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "Surviving <em>Black</em> <em>Friday</em>: 329B requests with Falcon"
+        },
+        "url": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "https://speakerdeck.com/ioquatix/surviving-<em>black</em>-<em>friday</em>-329-billion-requests-with-falcon"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_ksec",
+        "story_47971749"
+      ],
+      "author": "ksec",
+      "created_at": "2026-05-01T06:17:22Z",
+      "created_at_i": 1777616242,
+      "num_comments": 0,
+      "objectID": "47971749",
+      "points": 2,
+      "story_id": 47971749,
+      "title": "Surviving Black Friday: 329B requests with Falcon",
+      "updated_at": "2026-05-01T06:26:38Z",
+      "url": "https://speakerdeck.com/ioquatix/surviving-black-friday-329-billion-requests-with-falcon"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "funbitty"
+        },
+        "story_text": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "Hi HN, I built Funxy because I needed a scripting layer for Go services \u2014 \nsomething between hardcoding business logic in Go and shipping a full dynamic \nlanguage with no safety guarantees.<p>What it does:\n- Embed in Go with 3 lines: New(), Bind(), Call(), Eval()\n- Bind Go structs and functions directly \u2014 scripts see fields and call methods\n- Type inference catches errors before runtime, but you rarely write annotations\n- Option/Result instead of nil \u2014 no surprise panics in production\n- Stdlib covers HTTP, WebSocket, gRPC, SQLite, JSON, CSV, async tasks out of the box<p>Use cases I built it for:\n- Business rules that change without redeploying the Go host\n- Data pipelines and ETL scripts\n- Configuration that's more than YAML but less than a full app<p>Example embedding:<p>Use case: discount rules your ops team can change without redeploy<p>Go side:<p><pre><code>    type Discounts struct {\n        VIPPercent     float64\n        HolidayPercent float64\n        MinOrder       float64\n    }\n    func (d *Discounts) SetVIP(pct float64)     { d.VIPPercent = pct }\n    func (d *Discounts) SetHoliday(pct float64)  { d.HolidayPercent = pct }\n    func (d *Discounts) SetMinOrder(min float64)  { d.MinOrder = min }\n\n    discounts := &amp;Discounts{VIPPercent: 0.05, HolidayPercent: 0.0, MinOrder: 100}\n    vm := funxy.New()\n    vm.Bind(&quot;discounts&quot;, discounts)\n    vm.LoadFile(&quot;rules.lang&quot;)\n    vm.Call(&quot;updateRules&quot;)\n    // discounts.VIPPercent is now 0.15\n    // discounts.HolidayPercent is now 0.10\n    // discounts.MinOrder is now 50 \u2014 no redeploy needed\n</code></pre>\nrules.lang (ops team edits this):<p><pre><code>    fun updateRules() {\n        // <em>Black</em> <em>Friday</em> campaign\n        discounts.SetVIP(0.15)\n        discounts.SetHoliday(0.10)\n        discounts.SetMinOrder(50.0)\n    }\n</code></pre>\nRepo: <a href=\"https://github.com/funvibe/funxy\" rel=\"nofollow\">https://github.com/funvibe/funxy</a>"
+        },
+        "title": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "Show HN: Funxy \u2013 A typed scripting language that embeds into Go apps"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://github.com/funvibe/funxy"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_funbitty",
+        "story_46976253",
+        "show_hn"
+      ],
+      "author": "funbitty",
+      "children": [
+        46976398
+      ],
+      "created_at": "2026-02-11T15:35:54Z",
+      "created_at_i": 1770824154,
+      "num_comments": 0,
+      "objectID": "46976253",
+      "points": 2,
+      "story_id": 46976253,
+      "story_text": "Hi HN, I built Funxy because I needed a scripting layer for Go services \u2014 \nsomething between hardcoding business logic in Go and shipping a full dynamic \nlanguage with no safety guarantees.<p>What it does:\n- Embed in Go with 3 lines: New(), Bind(), Call(), Eval()\n- Bind Go structs and functions directly \u2014 scripts see fields and call methods\n- Type inference catches errors before runtime, but you rarely write annotations\n- Option&#x2F;Result instead of nil \u2014 no surprise panics in production\n- Stdlib covers HTTP, WebSocket, gRPC, SQLite, JSON, CSV, async tasks out of the box<p>Use cases I built it for:\n- Business rules that change without redeploying the Go host\n- Data pipelines and ETL scripts\n- Configuration that&#x27;s more than YAML but less than a full app<p>Example embedding:<p>Use case: discount rules your ops team can change without redeploy<p>Go side:<p><pre><code>    type Discounts struct {\n        VIPPercent     float64\n        HolidayPercent float64\n        MinOrder       float64\n    }\n    func (d *Discounts) SetVIP(pct float64)     { d.VIPPercent = pct }\n    func (d *Discounts) SetHoliday(pct float64)  { d.HolidayPercent = pct }\n    func (d *Discounts) SetMinOrder(min float64)  { d.MinOrder = min }\n\n    discounts := &amp;Discounts{VIPPercent: 0.05, HolidayPercent: 0.0, MinOrder: 100}\n    vm := funxy.New()\n    vm.Bind(&quot;discounts&quot;, discounts)\n    vm.LoadFile(&quot;rules.lang&quot;)\n    vm.Call(&quot;updateRules&quot;)\n    &#x2F;&#x2F; discounts.VIPPercent is now 0.15\n    &#x2F;&#x2F; discounts.HolidayPercent is now 0.10\n    &#x2F;&#x2F; discounts.MinOrder is now 50 \u2014 no redeploy needed\n</code></pre>\nrules.lang (ops team edits this):<p><pre><code>    fun updateRules() {\n        &#x2F;&#x2F; Black Friday campaign\n        discounts.SetVIP(0.15)\n        discounts.SetHoliday(0.10)\n        discounts.SetMinOrder(50.0)\n    }\n</code></pre>\nRepo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;funvibe&#x2F;funxy\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;funvibe&#x2F;funxy</a>",
+      "title": "Show HN: Funxy \u2013 A typed scripting language that embeds into Go apps",
+      "updated_at": "2026-03-05T23:34:48Z",
+      "url": "https://github.com/funvibe/funxy"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "viikka"
+        },
+        "story_text": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "My clients kept losing money during sales.<p>They\u2019d use Compare at Price for a sale, and Shopify would still allow customers to apply discount codes on top. No native way to block this. Deleting codes or hiding the field doesn\u2019t actually stop discounts.<p>So I built an app that blocks discount codes when products are already discounted, especially during sales.<p>It:<p>Prevents double discounts on Compare at Price products<p>Blocks codes at checkout logic level (not just UI)<p>Can be scheduled for sales like <em>Black</em> <em>Friday</em>"
+        },
+        "title": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "Show HN: Shopify app to block discount codes on discounted products"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://apps.shopify.com/discount-blocker"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_viikka",
+        "story_46752876",
+        "show_hn"
+      ],
+      "author": "viikka",
+      "created_at": "2026-01-25T10:50:01Z",
+      "created_at_i": 1769338201,
+      "num_comments": 0,
+      "objectID": "46752876",
+      "points": 1,
+      "story_id": 46752876,
+      "story_text": "My clients kept losing money during sales.<p>They\u2019d use Compare at Price for a sale, and Shopify would still allow customers to apply discount codes on top. No native way to block this. Deleting codes or hiding the field doesn\u2019t actually stop discounts.<p>So I built an app that blocks discount codes when products are already discounted, especially during sales.<p>It:<p>Prevents double discounts on Compare at Price products<p>Blocks codes at checkout logic level (not just UI)<p>Can be scheduled for sales like Black Friday",
+      "title": "Show HN: Shopify app to block discount codes on discounted products",
+      "updated_at": "2026-03-05T23:25:12Z",
+      "url": "https://apps.shopify.com/discount-blocker"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "malshe"
+        },
+        "story_text": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "I missed buying a 4TB Samsung 990 EVO Plus SSD for around $250 on Amazon during the <em>Black</em> <em>Friday</em> sale. I thought maybe there will be a Christmas discount. But the price started going up and hasn't stopped until now. Today it is priced at $477. What gives? I thought there was a shortage of RAM."
+        },
+        "title": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "Tell HN: The insane price hike of internal SSDs"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_malshe",
+        "story_46607695",
+        "ask_hn"
+      ],
+      "author": "malshe",
+      "children": [
+        46607907,
+        46608211,
+        46608092,
+        46611595
+      ],
+      "created_at": "2026-01-13T20:46:56Z",
+      "created_at_i": 1768337216,
+      "num_comments": 7,
+      "objectID": "46607695",
+      "points": 4,
+      "story_id": 46607695,
+      "story_text": "I missed buying a 4TB Samsung 990 EVO Plus SSD for around $250 on Amazon during the Black Friday sale. I thought maybe there will be a Christmas discount. But the price started going up and hasn&#x27;t stopped until now. Today it is priced at $477. What gives? I thought there was a shortage of RAM.",
+      "title": "Tell HN: The insane price hike of internal SSDs",
+      "updated_at": "2026-03-05T23:23:01Z"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "afrazullal"
+        },
+        "story_text": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "Hi HN,<p>I\u2019m Muhammed Mufinuddin Afraz, a solo technical founder based in Ullal, Karnataka, India.<p>For the past 12 months, I\u2019ve been building Vect AI \u2014 an Autonomous Marketing Operating System designed to replace the fragmented \u201cmodern marketing stack.\u201d<p>The Thesis: The Stack Is Broken<p>Modern marketing requires juggling 10\u201315 disconnected tools: one for writing, one for images, one for SEO, one for CRM, plus automation glue in between. For solo founders and lean teams, this creates siloed data, lost context, and endless prompt-copying. You spend more time managing tools than building growth.<p>I didn\u2019t want a better chatbot.\nI wanted a command center.<p>What Is Vect AI?<p>Vect is a state-aware marketing OS.<p>Unlike ChatGPT-style tools that reset context every session, Vect maintains a persistent business kernel. Onboarding happens once:<p>Brand voice (e.g. professional, technical, witty)<p>Audience avatar<p>Core product truths<p>Every tool inside Vect inherits this state automatically. I never have to re-prompt \u201cact like a B2B SaaS marketer\u201d again \u2014 the system already knows.<p>Architecture: Three Layers of Autonomy<p>1. Sensor Layer (Grounding &amp; Research)\nMost AI content is generic because it hallucinates or relies on stale data. Vect\u2019s Market Signal Analyzer addresses this by:<p>Performing real-time web retrieval via Google Search APIs<p>Analyzing top-ranking content to detect information gaps<p>Scoring subtopics by velocity (0\u201310) to surface early \u201cblue ocean\u201d opportunities<p>2. Strategist Layer (Planning &amp; Logic)\nThis is the hardest problem: getting an LLM to plan without hallucinating.<p>Vect\u2019s Campaign Builder takes a goal (e.g. \u201cLaunch a <em>Black</em> <em>Friday</em> offer\u201d) and generates a structured, multi-phase plan:<p>Tease (anticipation)<p>Launch (conversion)<p>Close (urgency)<p>It produces a campaign canvas showing all required assets (emails, posts, blogs) and enforces consistency across the entire funnel.<p>3. Creative Layer (Execution)\nVect integrates specialized agents for SEO, email, and social copy using proven frameworks (PAS, AIDA).\nIt also integrates Google\u2019s Veo model for physics-aware text-to-video generation, enabling high-quality commercial assets without context switching.<p>Why Build This From India?<p>Building from Ullal means no VC safety net and no large team \u2014 just code and time. That constraint forced radical efficiency.<p>I didn\u2019t hire a strategist; I built the planner.\nI didn\u2019t hire a researcher; I built the analyzer.\nI didn\u2019t hire a video editor; I integrated one.<p>Vect is designed to make a solo founder operate like a full marketing team.<p>Availability<p>Vect is a web-based app using a credit system, since deep research and video generation incur real compute costs.<p>I\u2019d appreciate feedback on:<p>The state-aware approach to brand consistency<p>Whether the Campaign Builder feels too rigid or appropriately opinionated<p>What other painful parts of your marketing workflow should be automated next<p>Link: <a href=\"https://vect.pro\" rel=\"nofollow\">https://vect.pro</a><p>Location: Ullal, Karnataka, India"
+        },
+        "title": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "Show HN: I Built an Autonomous Marketing OS from a Small Town in India (Vect AI)"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://blog.vect.pro/ai-marketing-command-center-guide"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_afrazullal",
+        "story_46287072",
+        "show_hn"
+      ],
+      "author": "afrazullal",
+      "created_at": "2025-12-16T10:52:06Z",
+      "created_at_i": 1765882326,
+      "num_comments": 0,
+      "objectID": "46287072",
+      "points": 1,
+      "story_id": 46287072,
+      "story_text": "Hi HN,<p>I\u2019m Muhammed Mufinuddin Afraz, a solo technical founder based in Ullal, Karnataka, India.<p>For the past 12 months, I\u2019ve been building Vect AI \u2014 an Autonomous Marketing Operating System designed to replace the fragmented \u201cmodern marketing stack.\u201d<p>The Thesis: The Stack Is Broken<p>Modern marketing requires juggling 10\u201315 disconnected tools: one for writing, one for images, one for SEO, one for CRM, plus automation glue in between. For solo founders and lean teams, this creates siloed data, lost context, and endless prompt-copying. You spend more time managing tools than building growth.<p>I didn\u2019t want a better chatbot.\nI wanted a command center.<p>What Is Vect AI?<p>Vect is a state-aware marketing OS.<p>Unlike ChatGPT-style tools that reset context every session, Vect maintains a persistent business kernel. Onboarding happens once:<p>Brand voice (e.g. professional, technical, witty)<p>Audience avatar<p>Core product truths<p>Every tool inside Vect inherits this state automatically. I never have to re-prompt \u201cact like a B2B SaaS marketer\u201d again \u2014 the system already knows.<p>Architecture: Three Layers of Autonomy<p>1. Sensor Layer (Grounding &amp; Research)\nMost AI content is generic because it hallucinates or relies on stale data. Vect\u2019s Market Signal Analyzer addresses this by:<p>Performing real-time web retrieval via Google Search APIs<p>Analyzing top-ranking content to detect information gaps<p>Scoring subtopics by velocity (0\u201310) to surface early \u201cblue ocean\u201d opportunities<p>2. Strategist Layer (Planning &amp; Logic)\nThis is the hardest problem: getting an LLM to plan without hallucinating.<p>Vect\u2019s Campaign Builder takes a goal (e.g. \u201cLaunch a Black Friday offer\u201d) and generates a structured, multi-phase plan:<p>Tease (anticipation)<p>Launch (conversion)<p>Close (urgency)<p>It produces a campaign canvas showing all required assets (emails, posts, blogs) and enforces consistency across the entire funnel.<p>3. Creative Layer (Execution)\nVect integrates specialized agents for SEO, email, and social copy using proven frameworks (PAS, AIDA).\nIt also integrates Google\u2019s Veo model for physics-aware text-to-video generation, enabling high-quality commercial assets without context switching.<p>Why Build This From India?<p>Building from Ullal means no VC safety net and no large team \u2014 just code and time. That constraint forced radical efficiency.<p>I didn\u2019t hire a strategist; I built the planner.\nI didn\u2019t hire a researcher; I built the analyzer.\nI didn\u2019t hire a video editor; I integrated one.<p>Vect is designed to make a solo founder operate like a full marketing team.<p>Availability<p>Vect is a web-based app using a credit system, since deep research and video generation incur real compute costs.<p>I\u2019d appreciate feedback on:<p>The state-aware approach to brand consistency<p>Whether the Campaign Builder feels too rigid or appropriately opinionated<p>What other painful parts of your marketing workflow should be automated next<p>Link: <a href=\"https:&#x2F;&#x2F;vect.pro\" rel=\"nofollow\">https:&#x2F;&#x2F;vect.pro</a><p>Location: Ullal, Karnataka, India",
+      "title": "Show HN: I Built an Autonomous Marketing OS from a Small Town in India (Vect AI)",
+      "updated_at": "2026-03-05T23:13:21Z",
+      "url": "https://blog.vect.pro/ai-marketing-command-center-guide"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "alecco"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "black",
+            "friday"
+          ],
+          "value": "Bloody <em>Black</em> <em>Friday</em> for Hardware [video]"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://www.youtube.com/watch?v=V0z9UME9AlE"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_alecco",
+        "story_46242531"
+      ],
+      "author": "alecco",
+      "children": [
+        46242532
+      ],
+      "created_at": "2025-12-12T09:52:55Z",
+      "created_at_i": 1765533175,
+      "num_comments": 1,
+      "objectID": "46242531",
+      "points": 1,
+      "story_id": 46242531,
+      "title": "Bloody Black Friday for Hardware [video]",
+      "updated_at": "2026-03-05T23:10:13Z",
+      "url": "https://www.youtube.com/watch?v=V0z9UME9AlE"
+    }
+  ],
+  "hitsPerPage": 50,
+  "nbHits": 10,
+  "nbPages": 18,
+  "page": 0,
+  "params": "query=black+friday&tags=story&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+  "processingTimeMS": 21,
+  "processingTimingsMS": {
+    "_request": {
+      "roundTrip": 14
+    },
+    "afterFetch": {
+      "format": {
+        "highlighting": 2,
+        "total": 2
+      },
+      "merge": {
+        "mergeLoop": {
+          "prepareNextHit": 1,
+          "total": 1
+        },
+        "total": 2
+      },
+      "total": 2
+    },
+    "fetch": {
+      "query": 8,
+      "scanning": 9,
+      "total": 18
+    },
+    "total": 21
+  },
+  "query": "black friday",
+  "serverTimeMS": 25
+}

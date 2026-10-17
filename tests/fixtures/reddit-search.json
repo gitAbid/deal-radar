@@ -1,0 +1,62 @@
+{
+  "kind": "Listing",
+  "data": {
+    "after": "t3_3abcde",
+    "dist": 3,
+    "geo_filter": null,
+    "before": null,
+    "children": [
+      {
+        "kind": "t3",
+        "data": {
+          "id": "1abcde",
+          "subreddit": "selfhosted",
+          "title": "Black Friday 2026: Hetzner cloud is 40% off",
+          "selftext": "Saw this on their site this morning, the CX22 is down from EUR 4.51.",
+          "url": "https://www.hetzner.com/cloud/",
+          "permalink": "/r/selfhosted/comments/1abcde/black_friday_2026_hetzner/",
+          "created_utc": 1793000000,
+          "author": "someone",
+          "score": 120,
+          "num_comments": 14,
+          "over_18": false,
+          "stickied": false
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "id": "2abcde",
+          "subreddit": "selfhosted",
+          "title": "My homelab setup after three years",
+          "selftext": "Not a deal, just sharing the rack.",
+          "url": "https://www.reddit.com/r/selfhosted/comments/2abcde/my_homelab/",
+          "permalink": "/r/selfhosted/comments/2abcde/my_homelab/",
+          "created_utc": 1793000300,
+          "author": "other",
+          "score": 45,
+          "num_comments": 7,
+          "over_18": false,
+          "stickied": false
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "id": "3abcde",
+          "subreddit": "selfhosted",
+          "title": "Backblaze B2 promo code: 25% off the first year",
+          "selftext": "",
+          "url": "https://www.backblaze.com/cloud-storage",
+          "permalink": "/r/selfhosted/comments/3abcde/backblaze_b2_promo/",
+          "created_utc": 1793000600,
+          "author": "third",
+          "score": 9,
+          "num_comments": 1,
+          "over_18": false,
+          "stickied": false
+        }
+      }
+    ]
+  }
+}

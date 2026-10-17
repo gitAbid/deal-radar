@@ -1,0 +1,21 @@
+{
+  "id": "chatcmpl-fixture-valid",
+  "object": "chat.completion",
+  "created": 1760700000,
+  "model": "gpt-4o-mini",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"deals\":[{\"title\":\"Cursor Pro — 50% off annual\",\"summary\":\"Annual plans are half price during Black Friday week.\",\"price_now\":96,\"price_was\":192,\"currency\":\"USD\",\"discount_pct\":50,\"promo_code\":\"BF26\",\"starts_at\":\"2026-11-20T00:00:00Z\",\"ends_at\":\"2026-11-27T23:59:59Z\",\"url\":\"https://cursor.com/pricing?ref=black-friday\",\"eligibility_note\":\"new customers only\",\"confidence\":0.92},{\"title\":\"Cursor Ultra — $100 off the first year\",\"summary\":null,\"price_now\":200,\"price_was\":300,\"currency\":\"USD\",\"discount_pct\":null,\"promo_code\":null,\"starts_at\":null,\"ends_at\":\"2026-11-30T23:59:59Z\",\"url\":\"https://cursor.com/ultra\",\"eligibility_note\":\"annual plans only\",\"confidence\":0.55}],\"confidence\":0.9}"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4123,
+    "completion_tokens": 210,
+    "total_tokens": 4333
+  }
+}
